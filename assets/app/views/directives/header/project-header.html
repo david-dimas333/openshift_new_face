@@ -1,0 +1,28 @@
+<nav class="navbar navbar-pf-alt" role="navigation">
+  <div class="navbar-header" ng-class="layoutCollapsed?'collapsed':'undefined'">
+    <!-- JS click handler for #openshift-logo -->
+    <a class="navbar-brand" id="openshift-logo" href="./">
+      <div id="header-logo">
+        <span class="lLogo">The Digital Garage</span>
+        <span class="sLogo hidden-xs">Dg</span>
+      </div>
+    </a>
+    <!-- mobile nav menu -->
+    <div flex class="navbar-mbtn toggle-menu">
+      <button type="button" class="navbar-toggle project-action-btn ng-isolate-scope pull-right" data-toggle="collapse" data-target=".navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+  </div>
+  <div class="nav navbar-project-menu hidden-xs" ng-class="layoutCollapsed?'collapsed':'undefined'">
+    <div class="form-group">
+      <!-- TODO add multiple attribute back to the select tag when we support selecting multiple -->
+      <!-- Use title="" to prevent "Nothing selected" from briefly flashing while the projects are still loading. -->
+      <select class="selectpicker form-control" data-selected-text-format="count>3" id="boostrapSelect" title=""></select>
+    </div>
+  </div>
+  <navbar-utility class=""></navbar-utility>
+</nav>

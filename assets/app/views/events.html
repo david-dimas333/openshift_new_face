@@ -1,0 +1,25 @@
+<project-header class="top-header"></project-header>
+<project-page>
+  <!-- Middle section -->
+  <div class="middle-section">
+    <div id="scrollable-content" class="middle-container has-scroll">
+      <div class="middle-header header-light">
+        <div class="container-fluid">
+          <div class="page-header page-header-bleed-right page-header-bleed-left">
+            <h1 class="text-green">Events</h1>
+          </div>
+          <alerts alerts="alerts"></alerts>
+        </div>
+      </div><!-- /middle-header-->
+      <div class="middle-content surface-shaded">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-12" ng-if="projectContext">
+              <events project-context="projectContext" ng-if="projectContext"></events>
+            </div>
+          </div>
+        </div>
+      </div><!-- /middle-content -->
+    </div><!-- /middle-container -->
+  </div><!-- /middle-section -->
+</project-page>

@@ -1,0 +1,50 @@
+<div class="tile-click card card-image {{'card-' + template.metadata.annotations.iconClass}}" id="" ng-attr-title="{{(template | description) || template.metadata.name}}">
+  <div class="card-main">
+    <div class="card-action">
+      <div class="card-action-btn pull-left">
+        <a href=""
+           ng-click="filterTag(tag)"
+           ng-repeat="tag in (template | tags)"
+           ng-attr-title="Filter by tag {{tag}}"
+           class="tag small btn-flat">
+          {{tag}}
+        </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-inner">
+        <div class="card-content">
+          <div ng-if="template | annotation : 'provider'">
+            <label style="margin-right: 5px;">Provider:</label>
+            {{template | annotation : 'provider'}}
+          </div>
+          <!-- Only show the namespace if it's not in the shared openshift namespace -->
+          <div ng-if="template.metadata.namespace !== 'openshift'">
+            <label style="margin-right: 5px;">Namespace:</label>
+            {{template.metadata.namespace}}
+          </div>
+          <div ng-if="template | annotation : 'version'">
+            <label style="margin-right: 5px;">Version:</label>
+            {{template | annotation : 'version'}}
+          </div>
+        </div>
+        <p class="card-heading">
+          <a class="tile-target" ng-href="{{template | createFromTemplateURL : project}}">{{template.metadata.name}}</a>&nbsp;
+          <small>
+            <i
+              class="fa fa-bolt tile-badge-icon"
+              aria-hidden="true"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              data-container="body"
+              data-original-title="Template"></i>
+            <span class="sr-only">Template</span>
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="card-icon">
+    <custom-icon class="icon-content" resource="template" kind="template" ></custom-icon>
+  </div>
+</div>

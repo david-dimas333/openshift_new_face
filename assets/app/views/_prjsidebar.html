@@ -1,0 +1,32 @@
+<nav class="navbar navbar-sidebar">
+    <ul class="nav nav-sidenav-primary">
+    	<li class="has-user-block">
+            <div uib-collapse="userBlockVisible">
+               <div class="item user-block">
+                    <!-- User picture-->
+                    <div class="user-block-picture">
+                        <img src="images/pages/profile.jpg" alt="Avatar" class="avatar img-thumbnail img-circle" />
+                    </div>
+                    <!-- Name and Job-->
+                    <div class="user-block-info" ng-if="!layoutCollapsed">
+                    	<span class="user-block-role">Administator</span>
+                    </div>
+               </div>
+            </div>
+        </li>
+        <!-- END user info-->
+    </ul>
+    <ul class="nav nav-sidenav-primary">
+        <!-- Iterates over all sidebar items-->
+        <li>
+         	<a title="Profile" href="#"><i class="fa fa-user fa-fw"></i>Profile</a>
+        </li>
+        <li>
+         	<a title="Account" href="#"><i class="fa fa-desktop fa-fw"></i>Account</a>
+        </li>
+        <li>
+         	<a title="Team" href="#"><i class="fa fa-group fa-fw"></i>Team</a>
+        </li>
+        <!-- End Iterates over all sidebar items-->
+    </ul>
+</nav>

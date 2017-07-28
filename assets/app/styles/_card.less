@@ -1,0 +1,738 @@
+/* Card View */
+.card.tile-click:hover .tile-target {
+  color: @navbar-os-bg-color-blue2;
+}
+.card-del-btn {
+  display: inline-block;
+  padding: 2px 6px;
+  vertical-align: middle;
+}
+.card-body{
+  &:hover, &:focus, &:active{
+    text-decoration: none;
+  }
+}
+
+.card-inner {
+  min-height: 110px;
+  margin: 24px 16px 10px;
+  .card-heading{
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 25px;
+    max-height: auto;
+    min-height: auto;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+  .card-content{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    line-height: 16px;
+    max-height: 50px;
+    min-height: 50px;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+}
+.card:hover {
+  box-shadow: 0 2px 12px -1px rgba(0, 0, 0, 0.3), 0 4px 5px 0 rgba(0, 0, 0, 0.11), 0 1px 10px 0 rgba(0, 0, 0, 0.1);
+}
+.card-image{
+  width: 100%;
+  margin: 8px 0;
+  z-index: 0;
+  .card-main{
+    z-index: 10;
+    .card-inner{
+      min-height: 100px;
+      .card-heading{
+        font-size: 15px;
+      }
+      .card-content{
+        max-height: none;
+      }
+    }
+    .card-action{
+      font-size: 20.5px;
+      border-top-width: 0px;
+      min-height: 30px;
+      .card-action-btn{
+        margin: 8px 18px;
+      }
+    }
+  }
+  .card-icon{
+    .icon-content {
+      position: absolute;
+      height: 100%;
+    }
+    position: absolute;
+    font-size: 120px;
+    top: 0%;
+    left: 50%;
+    height: 100%;
+    .font-icon{
+      position: relative;
+      left: -50%;
+    }
+    .font-icon.fa {
+      font-size: 110px;
+      top: -15%;
+    }
+  }
+}
+
+.card-red-custom{
+  background-color: @card-red-custom-bg;
+  color: @card-red-custom-color;
+  .card-body{
+    color: @card-red-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-red-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-red-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-red-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-red-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-red-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-green-custom{
+  background-color: @card-green-custom-bg;
+  color: @card-green-custom-color;
+  .card-body{
+    color: @card-green-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-green-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-green-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-green-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-green-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-green-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-deepgreen-custom{
+  background-color: @card-deepgreen-custom-bg;
+  color: @card-deepgreen-custom-color;
+  .card-body{
+    color: @card-deepgreen-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-deepgreen-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-deepgreen-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-deepgreen-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-deepgreen-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-deepgreen-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-lightblue-custom{
+  background-color: @card-lightblue-custom-bg;
+  color: @card-lightblue-custom-color;
+  .card-body{
+    color: @card-lightblue-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-lightblue-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-lightblue-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-lightblue-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-lightblue-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-lightblue-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-blue-custom{
+  background-color: @card-blue-custom-bg;
+  color: @card-blue-custom-color;
+  .card-body{
+    color: @card-blue-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-blue-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-blue-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-blue-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-blue-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-blue-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-deepblue-custom{
+  background-color: @card-deepblue-custom-bg;
+  color: @card-deepblue-custom-color;
+  .card-body{
+    color: @card-deepblue-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-deepblue-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-deepblue-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-deepblue-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-deepblue-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-deepblue-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-indigo-custom{
+  background-color: @card-indigo-custom-bg;
+  color: @card-indigo-custom-color;
+  .card-body{
+    color: @card-indigo-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-indigo-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-indigo-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-indigo-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-indigo-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-indigo-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-purple-custom{
+  background-color: @card-purple-custom-bg;
+  color: @card-purple-custom-color;
+  .card-body{
+    color: @card-purple-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-purple-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-purple-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-purple-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-purple-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-purple-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-deeppurple-custom{
+  background-color: @card-deeppurple-custom-bg;
+  color: @card-deeppurple-custom-color;
+  .card-body{
+    color: @card-deeppurple-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-deeppurple-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-deeppurple-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-deeppurple-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-deeppurple-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-deeppurple-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-bluegrey-custom{
+  background-color: @card-bluegrey-custom-bg;
+  color: @card-bluegrey-custom-color;
+  .card-body{
+    color: @card-bluegrey-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-bluegrey-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-bluegrey-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-bluegrey-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-bluegrey-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-bluegrey-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-yellow-custom{
+  background-color: @card-yellow-custom-bg;
+  color: @card-yellow-custom-color;
+  .card-body{
+    color: @card-yellow-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-yellow-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-yellow-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-yellow-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-yellow-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-yellow-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-pink-custom{
+  background-color: @card-pink-custom-bg;
+  color: @card-pink-custom-color;
+  .card-body{
+    color: @card-pink-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-pink-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-pink-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-pink-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-pink-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-pink-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-teal-custom{
+  background-color: @card-teal-custom-bg;
+  color: @card-teal-custom-color;
+  .card-body{
+    color: @card-teal-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-teal-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-teal-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-teal-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-teal-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-teal-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+.card-deepteal-custom{
+  background-color: @card-deepteal-custom-bg;
+  color: @card-deepteal-custom-color;
+  .card-body{
+    color: @card-deepteal-custom-color;
+  }
+  .card-action{
+    border-top: 1px solid @card-deepteal-custom-color;
+    .card-action-btn{
+      .btn-flat{
+        color: @card-deepteal-custom-color;
+        &:hover, &:active, &:focus{
+          color: @card-deepteal-custom-hover-color;
+          box-shadow: none;
+        }
+        &::after {
+          background-color: transparent;
+        }
+      }
+      .action-button{
+        color: @card-deepteal-custom-color;
+        &:hover, &:active, &:focus{
+          background-color: transparent;
+          color: @card-deepteal-custom-hover-color;
+        }
+      }
+    }
+  }
+}
+
+.card-icon-ruby{
+  .card-red-custom;
+  .card-heading a{
+    color: @card-red-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-red-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-red-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-red-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-red-custom-hover-color;
+  }
+}
+.card-icon-php{
+  .card-blue-custom;
+  .card-heading a{
+    color: @card-blue-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-blue-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-blue-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-blue-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-blue-custom-hover-color;
+  }
+}
+.card-icon-wildfly{
+  .card-deepblue-custom;
+  .card-heading a{
+    color: @card-deepblue-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-deepblue-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-deepblue-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-deepblue-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-deepblue-custom-hover-color;
+  }
+}
+.card-icon-perl{
+  .card-indigo-custom;
+  .card-heading a{
+    color: @card-indigo-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-indigo-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-indigo-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-indigo-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-indigo-custom-hover-color;
+  }
+}
+.card-icon-python{
+  .card-yellow-custom;
+  .card-heading a{
+    color: @card-yellow-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-yellow-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-yellow-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-yellow-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-yellow-custom-hover-color;
+  }
+}
+.card-icon-nodejs{
+  .card-deepgreen-custom;
+  .card-heading a{
+    color: @card-deepgreen-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-deepgreen-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-deepgreen-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-deepgreen-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-deepgreen-custom-hover-color;
+  }
+}
+.card-icon-jboss{
+  .card-deeppurple-custom;
+  .card-heading a{
+    color: @card-deeppurple-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-deeppurple-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-deeppurple-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-deeppurple-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-deeppurple-custom-hover-color;
+  }
+}
+.card-icon-jenkins{
+  .card-lightblue-custom;
+  .card-heading a{
+    color: @card-lightblue-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-lightblue-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-lightblue-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-lightblue-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-lightblue-custom-hover-color;
+  }
+}
+.card-icon-mongodb{
+  .card-green-custom;
+  .card-heading a{
+    color: @card-green-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-green-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-green-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-green-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-green-custom-hover-color;
+  }
+}
+.card-icon-mysql-database{
+  .card-deepteal-custom;
+  .card-heading a{
+    color: @card-deepteal-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-deepteal-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-deepteal-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-deepteal-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-deepteal-custom-hover-color;
+  }
+}
+.card-icon-postgresql{
+  .card-purple-custom;
+  .card-heading a{
+    color: @card-purple-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-purple-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-purple-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-purple-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-purple-custom-hover-color;
+  }
+}
+.card-{
+  .card-teal-custom;
+  .card-heading a{
+    color: @card-teal-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-teal-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-teal-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-teal-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-teal-custom-hover-color;
+  }
+}
+.card-null{
+  .card-bluegrey-custom;
+  .card-heading a{
+    color: @card-bluegrey-custom-color;
+    &:hover, &:active, &:focus{
+      color: @card-bluegrey-custom-hover-color;
+    }
+  }
+  .card-content label{
+    color: darken(@card-bluegrey-custom-hover-color, 1%);
+  }
+  .card-icon{
+    color: fade(@card-bluegrey-custom-color, 20%);
+  }
+  &.tile-click:hover .tile-target {
+    color: @card-bluegrey-custom-hover-color;
+  }
+}
+
+@media (min-width: @screen-sm-min){
+  .reveal-contents .card{
+    width: 48.5%;
+    &:nth-child(2n){
+      margin-left: 3%;
+    }
+  }
+}

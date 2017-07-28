@@ -1,0 +1,89 @@
+<default-header class="top-header"></default-header>
+<div class="wrap">
+  <div class="sidebar-left collapse navbar-collapse navbar-collapse-2" ng-class="layoutCollapsed?'collapsed':'undefined'">
+    <prjsidebar></prjsidebar>
+  </div>
+  <div class="middle" ng-if="!showGetStarted" >
+    <!-- Middle section -->
+    <div class="middle-section surface-shaded">
+      <div class="middle-container has-scroll">
+        <div class="middle-content">
+          <div class="container-fluid surface-shaded"> <!-- Safari needs surface-shaded at mobile -->
+            <div ng-if="(projects | hashSize) === 0" class="text-muted data-loading text-center">
+              <i class="fa fa-spin fa-spinner fa-pulse"></i>
+            </div>
+            <div ng-if="(projects | hashSize) !== 0">
+              <h1 style="margin-top: 10px;"><span style="display: inline-block; color: rgb(74, 182, 78);">Projects</span>
+                  <a ng-if="canCreate" href="createProject" class="fbtn fbtn-lg fbtn-orange-custom createPrj2" title="New project"><i class="icon-lg material-icons">create_new_folder</i></a>
+              </h1>              
+              <alerts alerts="alerts"></alerts>
+              <!-- START panel-->
+              <div class="row">
+                <div class="col-md-4 col-sm-6" ng-repeat="project in projects | orderByDisplayName">
+                  <div class="card card-green-custom">
+                    <div class="card-main">
+                      <a class="card-body" href="project/{{project.metadata.name}}">
+                        <div class="card-inner">
+                          <p class="card-heading">
+                            {{(project | uniqueDisplayName : projects)}}
+                          </p>
+                          <p class="card-content">
+                            {{project.metadata.annotations['openshift.io/description']}}
+                          </p>
+                        </div>
+                      </a>
+                      <div class="card-action">
+                        <div class="card-action-btn pull-left">
+                          <a class="btn btn-flat" href="project/{{project.metadata.name}}/create">
+                            <i class="fa fa-plus-square-o fa-lg"></i>
+                          </a>
+                          <span ng-if="project.status.phase == 'Active'">
+                            <delete-link
+                              class="fa-lg card-del-btn"
+                              kind="Project"
+                              resource-name="{{project.metadata.name}}"
+                              project-name="{{project.metadata.name}}"
+                              display-name="{{(project | displayName)}}"
+                              alerts="alerts"
+                              button-only>
+                            </delete-link>
+                          </span>
+                          <a class="btn btn-flat" href="project/{{project.metadata.name}}/settings?main-tab=openshiftConsole/settings">
+                            <i class="fa fa-cog fa-lg"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div><!-- /middle-content -->
+      </div><!-- /middle-container -->
+    </div><!-- /middle-section -->
+  </div><!-- /middle -->
+  <div class="middle" ng-if="showGetStarted">
+    <!-- Middle section -->
+    <div class="middle-section surface-shaded">
+      <div class="middle-container has-scroll">
+        <div class="middle-content">
+          <div class="empty-state-message empty-state-full-page text-center">
+            <h1 class="text-green">Welcome to OpenShift.</h1>
+            <p>
+              OpenShift helps you quickly develop, host, and scale applications.<br>
+              <span ng-if="canCreate">Create a project for your application.</span>
+            </p>
+            <a ng-if="canCreate" href="createProject" class="btn btn-green waves-attach waves-button waves-light waves-effect">New Project</a>
+            <p>To learn more, visit the OpenShift <a ng-href="{{'' | helpLink}}">documentation</a>.</p>
+            <p ng-if="canCreate === false">
+              <span ng-if="!newProjectMessage">A cluster admin can create a project for you by running the command<br>
+                <code>oadm new-project &lt;projectname&gt; --admin={{user.metadata.name || '&lt;YourUsername&gt;'}}</code></span>
+              <span ng-if="newProjectMessage" ng-bind-html="newProjectMessage | linky" style="white-space:pre;"></span>
+            </p>
+          </div>
+        </div><!-- /middle-content -->
+      </div><!-- /middle-container -->
+    </div><!-- /middle-section -->
+  </div><!-- /middle -->
+</div><!-- /wrap -->

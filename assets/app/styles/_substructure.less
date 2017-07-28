@@ -1,0 +1,359 @@
+//
+// Substructure
+// ------------------------------------
+html,body {
+  margin:0;
+  padding:0;
+}
+
+.layout-pf-alt.layout-pf-alt-fixed body {
+  padding-top: 0;
+}
+.console-os {
+  background-color: @body-bg;
+  .top-header {
+    .flex-display(@display: flex);
+    position:relative;
+    z-index:10;
+  /*  height: @navbar-os-header-height;*/
+    min-height: 126px;
+   .navbar-pf-alt{
+      height: 126px;
+   }
+  }
+  .navbar-project{
+    border-bottom: 1px solid @sidebar-os-border-color;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    position: relative;
+    background: #fff;
+    margin-top: 126px;
+    width: 100%;
+    .form-group{
+      margin: 0px;
+      .form-control{
+        margin-top: 5px;
+      }
+    }
+    label.control-label {
+      color: inherit;
+      font-size: 11px;
+      font-weight: 400;
+      margin: 8px 0 0 0;
+    }
+    .bootstrap-select.btn-group .btn {
+      width: 100%;
+      padding: 5px 25px 5px 10px;
+      font-size: @font-size-large;
+      line-height: @line-height-base;
+      font-weight: 400;
+      background: #FFF;
+      border: 1px solid #C6C6C6 !important;
+      transition: none;
+      &:hover, &:focus {
+        border-color: @input-border-hover;
+      }
+      .caret {
+        font-size: @font-size-large + 5;
+        margin-top: -4px;
+      }
+      .filter-option {
+        text-overflow: ellipsis;
+      }
+    }
+    .bootstrap-select.btn-group {
+      height: auto;
+      .dropdown-menu {
+        li a {
+          padding: 5px 10px;
+        }
+      }
+    }
+    .create-button-container {
+      margin-top: 17px;
+    }
+    height: @navbar-os-header-height-mobile;
+  }
+  .wrap {
+    background: #F5F7FA;
+    height:100vh;
+    margin-top:-@navbar-os-header-height-mobile; /* top offset height */
+    padding-top:@navbar-os-header-height-mobile; /* top offset height */
+    position:relative;
+    width:100%;
+    .backface-visibility(hidden);
+    .flex-direction(@direction: column);
+    .flex-display(@display: flex);
+    &.no-sidebar {
+      .container {
+        padding-bottom: @grid-gutter-width; // add spacing so content isn't next to bottom edge
+        h1 {
+          margin: 10px 0 20px;
+        }
+      }
+      .middle {
+        padding-top: 30px;
+      }
+    }
+    .container-main{
+      background-color: #f5f7fa;
+      .container-main-fluid {
+        margin-right: auto;
+        margin-left: auto;
+        padding: 30px 20px 20px;
+        .panel {
+          border-top-width: 2px;
+        }
+      }
+    }
+  }
+  .sidebar-left,.middle,.sidebar-right {
+    .flex(@columns: 0 0 auto);
+    width: 100%;
+    position: relative;
+  }
+  .sidebar-left {
+    padding: 0;
+    position:relative;
+    @media (max-width: @screen-xs-max) {
+      border-top: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+  .sidebar-right {
+    background-color: @panel-light;
+    display: none;
+  }
+  .middle {
+    height: 100%; // full height at mobile
+    .middle-section {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      .middle-container {
+        .flex-display(@display: flex);
+        .flex-direction(@direction: column);
+        height: 100%;
+        .middle-header {
+          .flex(@columns: 0 0 auto);
+        }
+        .middle-content {
+          .flex(@columns: 1 1 auto);
+          position: relative;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.header-light {
+  background-color: @panel-light;
+  border-bottom: 1px solid @page-header-border-color;
+}
+.surface-shaded {
+  background-color: #FDFDFD;
+}
+
+
+@media (min-width: @screen-sm-min) {
+  .layout-pf-alt-fixed .nav-pf-vertical-alt {
+    position: fixed;
+    bottom:0;
+    overflow: visible;
+    /* width: inherit; used if parent is using width: can't use 100% or auto */
+  }
+  .console-os {
+    .wrap {
+      margin-top:-@navbar-os-header-height-desktop; /* top offset height */
+      padding-top:@navbar-os-header-height-desktop; /* top offset height */
+      .flex-direction(@direction: row);
+      overflow:hidden;
+      &.no-sidebar {
+        .sidebar-left {
+          display: none !important;
+        }
+      }
+      &.show-sidebar-right {
+        .sidebar-right {
+          display: block;
+          .dl-horizontal {
+            margin: 0 0 @line-height-computed;
+            dt {
+              text-align: left;
+            }
+            dd {
+              .word-break();
+            }
+          }
+          .sidebar-help {
+            color: @gray-light;
+          }
+        }
+      }
+    }
+    .top-header {
+      min-height:60px; /* top offset height */
+      .navbar-pf-alt{
+        height: 60px;
+     }
+      height: @navbar-os-header-height-desktop; /* top offset height */
+    }
+    .sidebar-left,.middle,.sidebar-right {
+      -webkit-overflow-scrolling:touch;
+    }
+    .sidebar-left {
+      .flex(@columns: 0 0 @sidebar-left-width-sm);
+      overflow-y: visible;
+      transition:@sidebar-os-transition;
+    }
+    .middle{
+      .flex(@columns: 1 1 0%);
+      position: relative;
+      // make scrollable
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+    .sidebar-right {
+      border-left: 1px solid #dadada;
+      .flex(@columns: 0 0 @sidebar-right-width-sm);
+      position: relative;
+    }
+  }
+  // scrollable panels within sections
+  // ---------------------------------
+  .middle-section {
+    .middle-container {
+      .flex-display(@display: flex);
+      .flex-direction(@direction: column);
+      .flex-wrap(@wrap: nowrap);
+      .align-items(@align: flex-start);
+      .justify-content(@justify: flex-start);
+      // remove ie prefixes when PostCSS Autoprefixer is included for github issue #7559
+      -ms-flex-align: start;
+      -ms-flex-pack: start;
+
+      height: 100%;
+      position: absolute;
+      overflow: hidden; //make scrollable
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      &.has-scroll {
+      overflow-x: hidden;
+      overflow-y: auto;
+      }
+      .middle-header {
+        .flex(@columns: 0 0 auto);
+        width: 100%;
+      }
+      .middle-content {
+        .flex(@columns: 1 1 auto);
+        position: relative;
+        width: 100%;
+
+        &.has-scroll {
+        overflow-x: hidden;
+        overflow-y: auto;
+        }
+      }
+    }
+  }
+  .right-section {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: @sidebar-right-width-sm;
+    height: 100%;
+    .right-container {
+      .flex-display(@display: flex);
+      .flex-direction(@direction: column);
+      .flex-wrap(@wrap: nowrap);
+      .align-items(@align: flex-start);
+      .justify-content(@justify: flex-start);
+      // remove ie prefixes when PostCSS Autoprefixer is included for github issue #7559
+      -ms-flex-align: start;
+      -ms-flex-pack: start;
+      
+      height: 100%;
+      position: absolute;
+      overflow: hidden;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      .right-header  {
+        .flex(@columns: 0 0 auto);
+        width: 100%;
+      }
+      .right-content {
+        .flex(@columns: 1 1 auto);
+        position: relative;
+        overflow-x: hidden;
+        overflow-y: auto;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+@media (min-width: @screen-md-min) {
+  .console-os {
+    .sidebar-right {
+      .flex(@columns: 0 0 @sidebar-right-width-md);
+      .right-section {
+        width: @sidebar-right-width-md;
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-lg-min) {
+  .console-os {
+    .sidebar-left {
+      .flex(@columns: 0 0 @sidebar-left-width-md);
+      .navbar-sidebar {
+        width: @sidebar-left-width-md;
+      }
+    }
+    .wrap.show-sidebar-right {
+      .sidebar-right {
+        .flex(@columns: 0 0 @sidebar-right-width-lg);
+        .right-section {
+          width: @sidebar-right-width-lg;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-xlg-min) {
+  .console-os {
+    .sidebar-left {
+      .flex(@columns: 0 0 @sidebar-left-width-lg);
+      .navbar-sidebar {
+        width: @sidebar-left-width-lg;
+      }
+    }
+    .wrap.show-sidebar-right {
+      .sidebar-right {
+        .flex(@columns: 0 0 @sidebar-right-width-xlg);
+        .right-section {
+          width: @sidebar-right-width-xlg;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: @screen-sm-min) {
+  .console-os {
+    .navbar-project{
+      margin-top: 60px;
+    }
+  }
+}

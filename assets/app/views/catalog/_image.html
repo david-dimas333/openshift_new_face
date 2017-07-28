@@ -1,0 +1,50 @@
+<div class="tile-click card card-image {{'card-' + (imageStream | imageStreamTagAnnotation : 'iconClass' : imageTag)}}" id="" ng-attr-title="{{imageStream | imageStreamTagAnnotation : 'description' : imageTag}}">
+  <div class="card-main">
+    <div class="card-action">
+      <div class="card-action-btn pull-left">
+        <a href=""
+           ng-click="filterTag(tag)"
+           ng-repeat="tag in (imageStream | imageStreamTagTags : imageTag)"
+           ng-attr-title="Filter by tag {{tag}}"
+           class="tag small btn-flat">
+          {{tag}}
+        </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="card-inner">
+        <div class="card-content">
+          <div ng-if="imageStream | imageStreamTagAnnotation : 'provider' : imageTag">
+            <label style="margin-right: 5px;">Provider:</label>
+            {{imageStream | imageStreamTagAnnotation : 'provider' : imageTag}}
+          </div>
+          <!-- Only show the namespace if it's not in the shared openshift namespace -->
+          <div ng-if="imageStream.metadata.namespace !== 'openshift'">
+            <label style="margin-right: 5px;">Namespace:</label>
+            {{imageStream.metadata.namespace}}
+          </div>
+          <div ng-if="version && version !== imageTag">
+            <label style="margin-right: 5px;">Version:</label>
+            {{version}}
+          </div>
+        </div>
+        <p class="card-heading">
+          <a class="tile-target" ng-href="{{imageStream | createFromImageURL : imageTag : project}}">{{imageStream.metadata.name}}:{{imageTag}}</a>
+          <small ng-if="isBuilder">
+            <i
+              class="pficon pficon-image tile-badge-icon"
+              aria-hidden="true"
+              data-toggle="tooltip"
+              data-placement="bottom"
+              data-container="body"
+              data-original-title="Builder Image"></i>
+            <span class="sr-only">Builder Image</span>
+          </small>
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="card-icon">
+    <custom-icon class="icon-content" resource="imageStream" kind="image" tag="imageTag" title="{{imageStream.metadata.name}}:{{imageTag}}"></custom-icon>
+  </div>
+</div>

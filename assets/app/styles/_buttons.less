@@ -1,0 +1,71 @@
+// Misc
+// --------------------------------------------------
+.btn-file {
+  position: relative;
+  overflow: hidden;
+  input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: inherit;
+    display: block;
+  }
+}
+
+.btn-flat-default {
+  border: 1px solid transparent;
+  &:hover, &:focus {
+    background-color: @btn-flat-bg;
+    border-color: @btn-flat-border-color;
+  }
+}
+
+.btn, .btn:hover, .btn:focus, .btn:active{
+  border-color: transparent !important;
+}
+
+
+/* FButton */
+.fbtn{
+  line-height: 0;
+  i.material-icons.icon-lg{
+    line-height: 0.8;
+  }
+}
+.fbtn-purple-custom {
+  background-color: @fbtn-purple-custom-bg;
+  color: @fbtn-purple-custom-color;
+  &:active, &:focus, &:hover {
+    background-color: darken(@fbtn-purple-custom-bg, 2%);
+    color: @fbtn-purple-custom-color;
+  }
+}
+.fbtn-orange-custom {
+  background-color: @fbtn-orange-custom-bg;
+  color: @fbtn-orange-custom-color;
+  &:active, &:focus, &:hover {
+    background-color: darken(@fbtn-orange-custom-bg, 2%);
+    color: @fbtn-orange-custom-color;
+  }
+}
+.fbtn-green-custom {
+  background-color: @fbtn-green-custom-bg;
+  color: @fbtn-green-custom-color;
+  &:active, &:focus, &:hover {
+    background-color: darken(@fbtn-green-custom-bg, 2%);
+    color: @fbtn-green-custom-color;
+  }
+}
+
+.btn-green {
+  color: @btn-custom-color;
+  &:active, &:focus, &:hover {
+    color: @btn-custom-color-hover;
+  }
+}
